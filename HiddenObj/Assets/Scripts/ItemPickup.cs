@@ -19,7 +19,7 @@ public class ItemPickup: Interactable {
     {
 
         Debug.Log("picking up: " + transform.name);
-        //Debug.Log("AKA: " + item.name);
+        Debug.Log("AKA: " + item.name);
         //remove from scene
         Destroy(gameObject);
 

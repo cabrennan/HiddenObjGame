@@ -886,7 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.75
   interactionTransform: {fileID: 348191620}
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: af78eaa697ed032478fceacb9764667e, type: 2}
 --- !u!65 &348191617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1470,7 +1470,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 581701298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.928612, y: -3.3486328, z: 7.692505}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2496,6 +2496,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114344200376896868, guid: 31ac4be503eff364db3fa27891e5be5d,
+        type: 2}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: af78eaa697ed032478fceacb9764667e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31ac4be503eff364db3fa27891e5be5d, type: 2}
   m_IsPrefabParent: 0

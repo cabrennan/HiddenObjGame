@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: Assembly-CSharp, Configuration: Debug Any CPU ------
+1>  Assembly-CSharp -> C:\Users\chris\Documents\GitHub\HiddenObj\HiddenObjGame\HiddenObj\Temp\bin\Debug\Assembly-CSharp.dll
+2>------ Build started: Project: Assembly-CSharp-Editor, Configuration: Debug Any CPU ------
+2>  Assembly-CSharp-Editor -> C:\Users\chris\Documents\GitHub\HiddenObj\HiddenObjGame\HiddenObj\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+========== Build: 2 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

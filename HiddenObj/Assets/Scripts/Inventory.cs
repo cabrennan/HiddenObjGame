@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour {
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
-
+    public int space = 15; // number of inventory slots 
     public List<Item> items = new List<Item>();
 
     private void Start()

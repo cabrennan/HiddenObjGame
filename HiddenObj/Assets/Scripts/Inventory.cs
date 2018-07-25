@@ -1,30 +1,27 @@
 ﻿//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
+using UnityEditor;
 
 public class Inventory : MonoBehaviour {
-    // #region Singleton   
-    // public static Inventory instance;
-    // private void Awake()
-    // {
-    //    if(instance != null){
-    //       Debug.LogWarning("Attempt to create multiple instance of inventory found");
-    //       return;
-    //    }
-    //    instance = this;
-    //  }
-    // #endregion
 
+    #region Singleton
 
-   // public delegate void OnItemChanged();
-   // public OnItemChanged onItemChangedCallback;
+    public static Inventory instance;
+    public List<Item> items;
+    void Awake()
+    {
+        instance = this;
+        items = GetSceneItems();
+    }
+
+    #endregion
+
     public int space = 15; // number of inventory slots 
-    //public List<Item> items = new List<Item>();
 
     private void Start()
     {
-        //items = GetSceneItems();
+
     }
 
    
@@ -44,6 +41,23 @@ public class Inventory : MonoBehaviour {
         //if (onItemChangedCallback != null) {
         //    onItemChangedCallback.Invoke();
         //}
+
+    }
+
+    public static List<Item> GetSceneItems()
+    {
+        string[] itemGuids = AssetDatabase.FindAssets("t:Item");
+        List<Item> items = new List<Item>();
+
+        foreach (string s in itemGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(s);
+            Item i = AssetDatabase.LoadAssetAtPath<Item>(path);
+            Debug.Log("Adding to GetSceneItems list: " + i.name);
+            items.Add(i);
+        }
+
+        return items;
 
     }
 

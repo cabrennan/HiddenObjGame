@@ -11,7 +11,6 @@ public class Item : ScriptableObject {
     public virtual void Use()
     {
         // Use the item
-        // Something may happen
     }
 
     // Call this method to remove the item from inventory

@@ -8,14 +8,14 @@ public class InventorySlot : MonoBehaviour {
 
     public void AddItem(Item newItem)
     {
-        item = newItem;
-        inventoryText.text = item.name;
+        Debug.Log("Inventory Slot, adding item: " + newItem.name);
 
+        item = newItem;
+        inventoryText.text = newItem.name;
     }
 
     public void ClearSlot()
     {
-        item = null;
-        inventoryText.text = null;
+        Debug.Log("Inside clear slot");
     }
 }

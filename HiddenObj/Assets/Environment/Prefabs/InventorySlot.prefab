@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224866305012718330}
   - component: {fileID: 222968576295524696}
   - component: {fileID: 114765882535622854}
-  - component: {fileID: 114580032699295500}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -39,24 +38,26 @@ GameObject:
   - component: {fileID: 224508672442140638}
   - component: {fileID: 222318383485738638}
   - component: {fileID: 114941515943212278}
+  - component: {fileID: 114354618577454586}
   m_Layer: 5
-  m_Name: InventoryText(Icon)
+  m_Name: InventoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114580032699295500
+--- !u!114 &114354618577454586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1012575764398048}
+  m_GameObject: {fileID: 1671779114498976}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a72fb4de1d44437488cfaf04423b3774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryText: {fileID: 114941515943212278}
 --- !u!114 &114765882535622854
 MonoBehaviour:
   m_ObjectHideFlags: 1

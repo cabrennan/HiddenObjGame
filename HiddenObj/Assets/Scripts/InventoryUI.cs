@@ -5,17 +5,16 @@ using UnityEditor;
 
 public class InventoryUI : MonoBehaviour {
 
-    // Needs the list from inventory here
-    public List<Item> items = new List<Item>();
-    //Inventory inventory;
-
+    public Transform itemsParent;
+    Inventory inventory;
+    InventorySlot[] slots;
 
     // Use this for initialization
     void Start () {
 
-        items = GetSceneItems();
-        //Inventory = Inventory.instance;
-        //inventory.onItemChangedCallback += UpdateUI;
+        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        inventory = Inventory.instance;
+        UpdateUI(inventory.items);
 		
 	}
 	
@@ -24,24 +23,25 @@ public class InventoryUI : MonoBehaviour {
 		
 	}
      
-    void UpdateUI()
+    void UpdateUI(List<Item> items)
     {
         Debug.Log("Updating UI");
-    }
-
-    public static List<Item> GetSceneItems()
-    {
-        string[] itemGuids = AssetDatabase.FindAssets("t:Item");
-        List<Item> items = new List<Item>();
-
-        foreach (string s in itemGuids)
+        for (int i=0; i<slots.Length; i++)
         {
-            string path = AssetDatabase.GUIDToAssetPath(s);
-            Item i = AssetDatabase.LoadAssetAtPath<Item>(path);
-            Debug.Log("Adding to GetSceneItems list: " + i.name);
-            items.Add(i);
+            Debug.Log("Top of loop I: " + i.ToString() + " Count: " + items.Count.ToString());
+            if (inventory.items.Count>0 )
+            {
+                Debug.Log("Filling slot: " + i.ToString() + " with item: " + items[0].name);
+                slots[i].AddItem(items[0]);
+                items.RemoveAt(0);
+                Debug.Log("Now items count is: " + items.Count.ToString());
+            }
+            else
+            {
+                Debug.Log("Skipping Slot: " + i.ToString());
+            }
         }
 
-        return items;
     }
+
 }

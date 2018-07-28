@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour {
 
     Item item;
+    Item otheritem;
     public Text inventoryText;
 
     public void AddItem(Item newItem)
@@ -16,6 +17,7 @@ public class InventorySlot : MonoBehaviour {
 
     public void ClearSlot()
     {
-        Debug.Log("Inside clear slot");
+        item = null;
+        inventoryText.text = null;
     }
 }

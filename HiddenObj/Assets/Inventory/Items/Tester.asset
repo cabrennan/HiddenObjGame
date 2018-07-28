@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Tester
   m_EditorClassIdentifier: 
   name: new item
-  inventoryText: 
+  icon: {fileID: 0}
+  showInInventory: 1

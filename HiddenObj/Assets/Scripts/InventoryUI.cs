@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour {
 
+    public GameObject inventoryUI;  //the entire UI
     public Transform itemsParent;
     Inventory inventory;
-    InventorySlot[] slots;
+    //InventorySlot[] slots;
 
     // Use this for initialization
     void Start () {
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        Debug.Log("Starting inventory UI");
+
+     //   slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = Inventory.instance;
-        UpdateUI(inventory.items);
+        inventory.onItemChangedCallback += UpdateUI;
+        UpdateUI();
 		
 	}
 	
@@ -23,24 +27,25 @@ public class InventoryUI : MonoBehaviour {
 		
 	}
      
-    void UpdateUI(List<Item> items)
+    void UpdateUI()
     {
-        Debug.Log("Updating UI");
+        Debug.Log("Inside UpdateUI");
+                InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
+
         for (int i=0; i<slots.Length; i++)
         {
-            Debug.Log("Top of loop I: " + i.ToString() + " Count: " + items.Count.ToString());
-            if (inventory.items.Count>0 )
+            Debug.Log("Top of loop I: " + i.ToString());
+            if (i < inventory.items.Count)
             {
-                Debug.Log("Filling slot: " + i.ToString() + " with item: " + items[0].name);
-                slots[i].AddItem(items[0]);
-                items.RemoveAt(0);
-                Debug.Log("Now items count is: " + items.Count.ToString());
+                slots[i].AddItem(inventory.items[i]);
             }
             else
             {
-                Debug.Log("Skipping Slot: " + i.ToString());
+                slots[i].ClearSlot();
             }
+
         }
+        Debug.Log("after updateUI loop");
 
     }
 

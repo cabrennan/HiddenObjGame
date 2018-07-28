@@ -11,12 +11,16 @@ public class Item : ScriptableObject {
     public virtual void Use()
     {
         // Use the item
+
     }
+
+
+
 
     // Call this method to remove the item from inventory
     public void RemoveFromInventory()
     {
-        // not used - 
+        Inventory.instance.Remove(this); 
     }
 
 }

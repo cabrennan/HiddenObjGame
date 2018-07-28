@@ -1878,7 +1878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9839b8f2c86244ea9e359a1a836ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
   itemsParent: {fileID: 1982628288}
 --- !u!1001 &436745672
 Prefab:
@@ -2313,6 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37b468d01b8c5c4e85a93fcc6b3985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
   space: 15
 --- !u!1001 &597238664
 Prefab:
@@ -4835,11 +4835,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114580032699295500, guid: b7dd113d5f0c6014999b665afe52b98a,
-        type: 2}
-      propertyPath: inventoryText
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7dd113d5f0c6014999b665afe52b98a, type: 2}

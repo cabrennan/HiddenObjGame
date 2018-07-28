@@ -1,5 +1,4 @@
-﻿//using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -13,18 +12,21 @@ public class Inventory : MonoBehaviour {
     {
         instance = this;
         items = GetSceneItems();
+        Debug.Log("after Inventory awake");
     }
 
     #endregion
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
 
     public int space = 15; // number of inventory slots 
 
     private void Start()
     {
-
+        Debug.Log("inside start - load UI here?");
+        
     }
-
-   
 
     public void Add(Item item)
     {
@@ -37,10 +39,10 @@ public class Inventory : MonoBehaviour {
 
     public void Remove(Item item)
     {
-        //items.Remove(item);
-        //if (onItemChangedCallback != null) {
-        //    onItemChangedCallback.Invoke();
-        //}
+        items.Remove(item);
+        if (onItemChangedCallback != null) {
+            onItemChangedCallback.Invoke();
+        }
 
     }
 

@@ -13,24 +13,13 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
     public Transform interactionTransform;
 
-    bool isFocus = false;   // Is this interactable currently being focused?
-   // Transform player;       // Reference to the player transform
 
-    bool hasInteracted = false;	// Have we already interacted with the object?
-
-
-   // [RequireComponent(typeof(ColorOnHover))]
-        void Update()
-    {
-        Debug.Log("Inside Interactable Update");
-        
-    }
 
 
     // This method is meant to be overwritten
     public virtual void Interact()
     {
-
+        Debug.Log("interacting with: " + transform.name);
 
     }
 

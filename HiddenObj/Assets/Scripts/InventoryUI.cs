@@ -8,14 +8,11 @@ public class InventoryUI : MonoBehaviour {
     public GameObject inventoryUI;  //the entire UI
     public Transform itemsParent;
     Inventory inventory;
-    //InventorySlot[] slots;
 
     // Use this for initialization
     void Start () {
 
         Debug.Log("Starting inventory UI");
-
-     //   slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
         UpdateUI();

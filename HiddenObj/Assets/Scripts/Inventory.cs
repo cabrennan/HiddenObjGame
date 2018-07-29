@@ -6,6 +6,12 @@ public class Inventory : MonoBehaviour {
 
     #region Singleton
 
+    // items list will need Sprite association for game image
+    // In heiarchy attach approriate collider to sprite
+    // Attach interactibile script to item in heiarchy
+    // Attach itempickup script to item in heiarchy
+    // In inspector insert Inventory/items/item to variable in ItemPickup(script) dialog box. 
+
     public static Inventory instance;
     public List<Item> items;
     void Awake()

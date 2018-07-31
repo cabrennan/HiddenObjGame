@@ -84,7 +84,7 @@ Material:
     - _UnderlayOffsetX: 0
     - _UnderlayOffsetY: 0
     - _UnderlaySoftness: 0
-    - _VertexOffsetX: 75
+    - _VertexOffsetX: 65
     - _VertexOffsetY: -15
     - _WeightBold: 0.75
     - _WeightNormal: 0

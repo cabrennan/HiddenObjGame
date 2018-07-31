@@ -19,9 +19,15 @@ public class ItemPickup: Interactable {
     // Pick up the item
     void OnMouseDown()
     {
-        Debug.Log("Picking up " + item.name);
-        Inventory.instance.Remove(item);
-        Destroy(gameObject);    // Destroy item from scene
+        if (item.enabled)
+        {
+            Debug.Log("Picking up " + item.name);
+            Inventory.instance.Remove(item);
+            Destroy(gameObject);    // Destroy item from scene
+        } else
+        {
+            Debug.Log("item not enabled yet");
+        }
     }
    
 }

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour {
 
     Item item;
-    Item otheritem;
     public Text inventoryText;
 
     public void AddItem(Item newItem)
@@ -13,6 +12,7 @@ public class InventorySlot : MonoBehaviour {
 
         item = newItem;
         inventoryText.text = newItem.name;
+        item.enabled = true;
     }
 
     public void ClearSlot()

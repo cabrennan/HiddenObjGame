@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class InventorySlot : MonoBehaviour {
 
     Item item;
-    public Text inventoryText;
+    public TextMeshProUGUI textmesh;
+        
 
     public void AddItem(Item newItem)
     {
         Debug.Log("Inventory Slot, adding item: " + newItem.name);
 
         item = newItem;
-        inventoryText.text = newItem.name;
+        textmesh = GetComponent<TextMeshProUGUI>();
+        textmesh.SetText(newItem.name);
         item.enabled = true;
     }
 
     public void ClearSlot()
     {
         item = null;
-        inventoryText.text = null;
+        textmesh.SetText("");  
     }
 }

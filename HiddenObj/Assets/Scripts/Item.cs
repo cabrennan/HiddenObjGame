@@ -17,9 +17,6 @@ public class Item : ScriptableObject {
 
     }
 
-
-
-
     // Call this method to remove the item from inventory
     public void RemoveFromInventory()
     {

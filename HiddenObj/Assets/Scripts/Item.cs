@@ -10,6 +10,10 @@ public class Item : ScriptableObject {
     public bool showInInventory = true;
     public bool enabled = false; // If true can be clicked on
 
+    public Vector3 tutorial_1;
+    public Vector3 tutorial_2;
+    public Vector3 tutorial_3;
+
     // Called when the item is pressed in the inventory
     public virtual void Use()
     {

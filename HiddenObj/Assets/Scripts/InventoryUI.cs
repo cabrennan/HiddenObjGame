@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour {
 
     public GameObject inventoryUI;  //the entire UI
-    public Transform itemsParent;
     Inventory inventory;
 
     // Use this for initialization
@@ -25,7 +23,7 @@ public class InventoryUI : MonoBehaviour {
     void UpdateUI()
     {
         Debug.Log("Inside UpdateUI");
-                InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
+        InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
         Debug.Log("num slots found: " + slots.Length);
 
         for (int i=0; i<slots.Length; i++)

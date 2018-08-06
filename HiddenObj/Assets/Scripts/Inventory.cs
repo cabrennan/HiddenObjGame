@@ -14,7 +14,8 @@ public class Inventory : MonoBehaviour {
 
     public static Inventory instance;
     public List<Item> items;
-    void Awake()
+
+     void Awake()
     {
         instance = this;
         items = GetSceneItems();
@@ -57,11 +58,31 @@ public class Inventory : MonoBehaviour {
         string[] itemGuids = AssetDatabase.FindAssets("t:Item");
         List<Item> items = new List<Item>();
 
+
+        //string t;
+        GameObject obj;
+
         foreach (string s in itemGuids)
         {
             string path = AssetDatabase.GUIDToAssetPath(s);
             Item i = AssetDatabase.LoadAssetAtPath<Item>(path);
-            Debug.Log("Adding to GetSceneItems list: " + i.name);
+
+
+            if (i.name == "Brain")
+            {
+                Debug.Log("Found brain");
+                obj = GameObject.Find("/HiddenObjParent/" + i.name);
+                obj.transform.Translate(i.tutorial_2);
+
+            }
+
+            //if (t == "Brain")
+            //{
+            //    obj = GameObject.Find("/HiddenObjParent/" + t);
+            //    obj.transform.Translate(i.tutorial_2);
+            //}
+
+
             items.Add(i);
         }
 

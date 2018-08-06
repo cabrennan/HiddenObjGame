@@ -15,10 +15,6 @@ public class InventoryUI : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
      
     void UpdateUI()
     {
@@ -31,16 +27,13 @@ public class InventoryUI : MonoBehaviour {
             Debug.Log("Top of loop I: " + i.ToString());
             if (i < inventory.items.Count)
             {
-                slots[i].AddItem(inventory.items[i]);
-            }
-            else
-            {
-                slots[i].ClearSlot();
+                {
+                    slots[i].AddItem(inventory.items[i]);
+                }
             }
 
         }
         Debug.Log("after updateUI loop");
-
     }
 
 }

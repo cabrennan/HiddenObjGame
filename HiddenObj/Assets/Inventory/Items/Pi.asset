@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -14,3 +14,6 @@ MonoBehaviour:
   name: Pi
   icon: {fileID: 21300000, guid: 96f8eaf64940f934390ba6d7356719e3, type: 3}
   showInInventory: 1
+  enabled: 1
+  pos: {x: 2.8237302, y: 2.658944, z: -4.2320185}
+  obj: {fileID: 0}

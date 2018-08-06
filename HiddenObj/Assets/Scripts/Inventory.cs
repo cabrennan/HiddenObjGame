@@ -28,6 +28,7 @@ public class Inventory : MonoBehaviour {
     public OnItemChanged onItemChangedCallback;
 
     public int space = 15; // number of inventory slots 
+    public Vector3 position;
 
     private void Start()
     {
@@ -46,7 +47,11 @@ public class Inventory : MonoBehaviour {
 
     public void Remove(Item item)
     {
+        Debug.Log("Inside inventory remove item: " + item.name);
         items.Remove(item);
+        item.enabled = false;
+
+        Debug.Log("hitting redraw UI callback next");
         if (onItemChangedCallback != null) {
             onItemChangedCallback.Invoke();
         }
@@ -59,30 +64,10 @@ public class Inventory : MonoBehaviour {
         List<Item> items = new List<Item>();
 
 
-        //string t;
-        GameObject obj;
-
         foreach (string s in itemGuids)
         {
             string path = AssetDatabase.GUIDToAssetPath(s);
             Item i = AssetDatabase.LoadAssetAtPath<Item>(path);
-
-
-            if (i.name == "Brain")
-            {
-                Debug.Log("Found brain");
-                obj = GameObject.Find("/HiddenObjParent/" + i.name);
-                obj.transform.Translate(i.tutorial_2);
-
-            }
-
-            //if (t == "Brain")
-            //{
-            //    obj = GameObject.Find("/HiddenObjParent/" + t);
-            //    obj.transform.Translate(i.tutorial_2);
-            //}
-
-
             items.Add(i);
         }
 

@@ -23,7 +23,10 @@ public class ItemPickup: Interactable {
         {
             Debug.Log("Picking up " + item.name);
             Inventory.instance.Remove(item);
+            Debug.Log("After inventory remove item");
             Destroy(gameObject);    // Destroy item from scene
+            item.enabled = false;
+            
         } else
         {
             Debug.Log("item not enabled yet");

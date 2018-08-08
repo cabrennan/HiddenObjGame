@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Items")]
 public class Item : ScriptableObject {
@@ -10,6 +12,11 @@ public class Item : ScriptableObject {
     public Vector3 pos;
 
     public GameObject obj;
+    public Collider2D objCollider;
+    private Camera cam;
+    private Plane[] planes;
+
+
 
     // Called when the item is pressed in the inventory
     public virtual void Use()
@@ -25,29 +32,26 @@ public class Item : ScriptableObject {
     }
 
     public void SetPosition()   {
-        //Debug.Log("Positioning: " + this.name);
+        Debug.Log("Positioning: " + this.name);
 
         // Set item position;
-
-        
         bool visible = false;
         do
         {
-           //pos = new Vector3(Random.Range(-5.00f, 3.00f), Random.Range(0.0f, 3.0f), Random.Range(-2.0f, 0f));
-           // obj = GameObject.Find("/HiddenObjParent/" + this.name);
-           // obj.transform.position = pos;
-           // Debug.Log("Testing position for: " + this.name);
-            //RaycastHit hit;
-            //if(Physics.Raycast(obj.transform.position, obj.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
-           // {
-              visible = true;
-           // }
+            pos = new Vector3(Random.Range(-5.00f, 3.00f), Random.Range(0.0f, 3.0f), Random.Range(-2.0f, 0f));
+            obj = GameObject.Find("/HiddenObjParent/" + this.name);
+            obj.transform.position = pos;
+
+            Debug.Log("Testing position for: " + this.name);
+            cam = Camera.main;
+            planes = GeometryUtility.CalculateFrustumPlanes(cam);
+            objCollider = obj.GetComponent<Collider2D>();
+
+            if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
+            {
+                visible = true;
+            }
 
         } while (!visible);
-
-
-        
-        
-
     }
 }

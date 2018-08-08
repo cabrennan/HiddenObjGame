@@ -23,7 +23,6 @@ public class InventorySlot : MonoBehaviour {
 
     public void ClearSlot()
     {
-        item = null;
-        textmesh.SetText("");  
+                textmesh.SetText("");
     }
 }

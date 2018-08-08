@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
+
 public class InventoryUI : MonoBehaviour {
 
     public GameObject inventoryUI;  //the entire UI
     Inventory inventory;
+
 
     // Use this for initialization
     void Start () {
@@ -15,25 +17,39 @@ public class InventoryUI : MonoBehaviour {
 		
 	}
 	
+    private void setSlotText(InventorySlot slot)
+    {
+        Item thisItem;
+        thisItem = inventory.itemQueue.Dequeue();
+        Debug.Log("Setting slot with item: " + thisItem.name);
+        slot.AddItem(thisItem);
+    }
      
     void UpdateUI()
     {
-        Debug.Log("Inside UpdateUI");
         InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
-        Debug.Log("num slots found: " + slots.Length);
-
+        
         for (int i=0; i<slots.Length; i++)
         {
-            Debug.Log("Top of loop I: " + i.ToString());
-            if (i < inventory.items.Count)
+            if (!slots[i].textmesh)
             {
+                setSlotText(slots[i]);
+            } else
+            {
+                bool keep = false;
+                foreach(Item item in inventory.items)
                 {
-                    slots[i].AddItem(inventory.items[i]);
+                    if (slots[i].textmesh.text == item.name)
+                    {
+                        keep = true;
+                    }
                 }
+                if(!keep)
+                {
+                    setSlotText(slots[i]);
+                }                          
             }
-
         }
-        Debug.Log("after updateUI loop");
     }
 
 }

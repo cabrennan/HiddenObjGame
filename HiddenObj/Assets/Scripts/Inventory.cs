@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEditor;
 
@@ -14,11 +15,13 @@ public class Inventory : MonoBehaviour {
 
     public static Inventory instance;
     public List<Item> items;
+    public Queue<Item> itemQueue;
 
      void Awake()
     {
         instance = this;
-        items = GetSceneItems();
+        itemQueue = new Queue<Item>();
+        GetSceneItems();
         Debug.Log("after Inventory awake");
     }
 
@@ -32,46 +35,40 @@ public class Inventory : MonoBehaviour {
 
     private void Start()
     {
-        Debug.Log("inside start - load UI here?");
+       
         
     }
 
     public void Add(Item item)
     {
-        //items.Add(item);
-        //if (onItemChangedCallback != null) {
-        //    onItemChangedCallback.Invoke();
-        //}
+        items.Add(item);
+        if (onItemChangedCallback != null) {
+           onItemChangedCallback.Invoke();
+        }
  
     }
 
     public void Remove(Item item)
     {
-        Debug.Log("Inside inventory remove item: " + item.name);
         items.Remove(item);
         item.enabled = false;
-
-        Debug.Log("hitting redraw UI callback next");
+            
         if (onItemChangedCallback != null) {
             onItemChangedCallback.Invoke();
         }
 
     }
 
-    public static List<Item> GetSceneItems()
+    public void GetSceneItems()
     {
         string[] itemGuids = AssetDatabase.FindAssets("t:Item");
-        List<Item> items = new List<Item>();
-
-
         foreach (string s in itemGuids)
         {
             string path = AssetDatabase.GUIDToAssetPath(s);
             Item i = AssetDatabase.LoadAssetAtPath<Item>(path);
-            items.Add(i);
+            this.Add(i);
+            itemQueue.Enqueue(i);
         }
-
-        return items;
 
     }
 

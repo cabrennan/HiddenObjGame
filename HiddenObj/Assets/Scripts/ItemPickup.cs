@@ -11,8 +11,6 @@ public class ItemPickup: Interactable {
     public override void Interact()
     {
         base.Interact();
-        Debug.Log("Inside ItemPickup");
-
         OnMouseDown();
     }
 
@@ -22,15 +20,10 @@ public class ItemPickup: Interactable {
         if (item.enabled)
         {
             Debug.Log("Picking up " + item.name);
-            Inventory.instance.Remove(item);
-            Debug.Log("After inventory remove item");
             Destroy(gameObject);    // Destroy item from scene
             item.enabled = false;
-            
-        } else
-        {
-            Debug.Log("item not enabled yet");
-        }
+            Inventory.instance.Remove(item);
+        } 
     }
    
 }

@@ -21,11 +21,11 @@ public class Item : ScriptableObject {
     // Call this method to remove the item from inventory
     public void RemoveFromInventory()
     {
-        Inventory.instance.Remove(this);
+       // Inventory.instance.Remove(this);
     }
 
     public void SetPosition()   {
-        Debug.Log("Positioning: " + this.name);
+        //Debug.Log("Positioning: " + this.name);
 
         // Set item position;
 
@@ -33,10 +33,10 @@ public class Item : ScriptableObject {
         bool visible = false;
         do
         {
-            pos = new Vector3(Random.Range(-3.00f, 3.00f), Random.Range(0.0f, 3.0f), Random.Range(-5.0f, 0f));
-            obj = GameObject.Find("/HiddenObjParent/" + this.name);
-            obj.transform.position = pos;
-            Debug.Log("Testing position for: " + this.name);
+           //pos = new Vector3(Random.Range(-5.00f, 3.00f), Random.Range(0.0f, 3.0f), Random.Range(-2.0f, 0f));
+           // obj = GameObject.Find("/HiddenObjParent/" + this.name);
+           // obj.transform.position = pos;
+           // Debug.Log("Testing position for: " + this.name);
             //RaycastHit hit;
             //if(Physics.Raycast(obj.transform.position, obj.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
            // {

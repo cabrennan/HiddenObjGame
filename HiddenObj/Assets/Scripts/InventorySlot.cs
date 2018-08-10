@@ -18,6 +18,8 @@ public class InventorySlot : MonoBehaviour {
         textmesh.SetText(newItem.name);
         item.enabled = true;
         item.SetPosition();
+        //item.NewSetPosition();
+        //item.SPos();
 
     }
 

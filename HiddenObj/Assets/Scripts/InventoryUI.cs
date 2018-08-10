@@ -19,10 +19,17 @@ public class InventoryUI : MonoBehaviour {
 	
     private void setSlotText(InventorySlot slot)
     {
-        Item thisItem;
-        thisItem = inventory.itemQueue.Dequeue();
-        Debug.Log("Setting slot with item: " + thisItem.name);
-        slot.AddItem(thisItem);
+        if (inventory.itemQueue.Count > 0)
+        {
+
+            Item thisItem;
+            thisItem = inventory.itemQueue.Dequeue();
+            Debug.Log("Setting slot with item: " + thisItem.name);
+            slot.AddItem(thisItem);
+        } else
+        {
+            slot.ClearSlot();
+        }
     }
      
     void UpdateUI()

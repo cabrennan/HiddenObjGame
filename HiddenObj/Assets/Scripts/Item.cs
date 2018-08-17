@@ -47,12 +47,15 @@ public class Item : ScriptableObject {
             //float screenY = Random.Range(0.0f, Camera.main.pixelHeight);
             float screenY = Random.Range(-4.0f, 3.0f);
             float screenZ = Random.Range(-4.0f, 0.0f);
-             Vector3 point = new Vector3(screenX, screenY, screenZ);
+            Vector3 point = new Vector3(screenX, screenY, screenZ);
 
             Debug.Log("Testing position: " + pos.ToString());
-            obj = GameObject.Find("/HiddenObjParent/" + this.name);
-            obj.transform.position = point;
-            //Instantiate(obj, point, Quaternion.identity);
+            obj = GameObject.Find("/HiddenObjects/" + this.name);
+            // variableForPrefab = (GameObject)Resources.Load("prefabs/prefab1", typeof(GameObject));
+            //obj = Resources.Load("/Prefabs/" + this.name) as GameObject;
+            //obj.transform.position = point;
+            Instantiate(obj, point, Quaternion.identity);
+            
             //visible = true;
             
             //Debug.Log("Testing position for: " + this.name);
@@ -65,6 +68,7 @@ public class Item : ScriptableObject {
             { 
                 visible = true;
             }
+            visible = true;
 
         } while (!visible);
     }

@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4969126145132024}
   - component: {fileID: 212708018962387916}
-  - component: {fileID: 114600728049978024}
-  - component: {fileID: 114783010089681326}
   - component: {fileID: 61622449359159020}
   m_Layer: 0
   m_Name: Books
@@ -68,33 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2.3700001}
   m_EdgeRadius: 0
---- !u!114 &114600728049978024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335978735408702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38553e9a757223f4fa66cbad469f4d70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  interactionTransform: {fileID: 4969126145132024}
-  item: {fileID: 11400000, guid: b27d5291e9d7bf5498084cfa78e85da4, type: 2}
---- !u!114 &114783010089681326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335978735408702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a26bbdd204eb04eb4ba12bead62d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  interactionTransform: {fileID: 4969126145132024}
 --- !u!212 &212708018962387916
 SpriteRenderer:
   m_ObjectHideFlags: 1

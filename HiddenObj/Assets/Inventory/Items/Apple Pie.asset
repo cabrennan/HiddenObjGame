@@ -16,7 +16,6 @@ MonoBehaviour:
   showInInventory: 1
   enabled: 1
   pos: {x: -3.0891657, y: 2.0572534, z: -8.266346}
-  tutorial:
-  - {x: -3, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 2.3, y: 0, z: 0}
+  obj: {fileID: 0}
+  objCollider: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}

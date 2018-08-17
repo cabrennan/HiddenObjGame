@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4883249733772636}
   - component: {fileID: 212837390797711866}
   - component: {fileID: 61218772800352386}
-  - component: {fileID: 114985482673127342}
-  - component: {fileID: 114454997912145086}
+  - component: {fileID: 114043924904695000}
+  - component: {fileID: 114288961694050872}
   m_Layer: 0
   m_Name: Apple Pie
   m_TagString: Untagged
@@ -68,20 +68,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8799999, y: 1.96}
   m_EdgeRadius: 0
---- !u!114 &114454997912145086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698924483744002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a26bbdd204eb04eb4ba12bead62d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  interactionTransform: {fileID: 4883249733772636}
---- !u!114 &114985482673127342
+--- !u!114 &114043924904695000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,6 +82,19 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 4883249733772636}
   item: {fileID: 11400000, guid: d536f5a3bc741824d92f4d94ab9f14d3, type: 2}
+--- !u!114 &114288961694050872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698924483744002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a26bbdd204eb04eb4ba12bead62d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  interactionTransform: {fileID: 4883249733772636}
 --- !u!212 &212837390797711866
 SpriteRenderer:
   m_ObjectHideFlags: 1

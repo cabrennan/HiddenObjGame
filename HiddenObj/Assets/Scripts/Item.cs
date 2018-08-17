@@ -67,7 +67,11 @@ public class Item : ScriptableObject {
             if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
             { 
                 visible = true;
+            } else
+            {
+                Debug.Log("Didn't find a visible position for " + this.name);
             }
+       
             visible = true;
 
         } while (!visible);
